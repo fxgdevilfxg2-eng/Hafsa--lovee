@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Hafsaa ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    text-align:center;
+    color:#fff;
+}
+
+.container{
+    padding:20px;
+}
+
+.card{
+    background:white;
+    color:#333;
+    max-width:400px;
+    margin:40px auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#ff4e88;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    border-radius:25px;
+    background:#ff4e88;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.hidden{
+    display:none;
+}
+
+.heart{
+    position:fixed;
+    top:-10px;
+    color:red;
+    animation:fall 4s linear infinite;
+}
+
+@keyframes fall{
+    to{ transform: translateY(110vh); }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div id="lock">
+    <h2>Enter Password ❤️</h2>
+    <input type="password" id="pass" placeholder="Enter password" style="padding:10px;border-radius:20px;border:none;text-align:center;">
+    <br>
+    <button onclick="openLove()">Open My Heart</button>
+</div>
+
+<div id="content" class="hidden">
+    <div class="card">
+        <h1>Happy Valentine's Day Hafsaa ❤️</h1>
+        <p>
+        Hey I want to tell you so much things but still I want to say that I love you so much ❤️<br><br>
+        I know I made many mistakes that made you cry, but you know that I never did this intentionally.<br><br>
+        But you know that I love you sooooo much 🥺❤️<br><br>
+        I will take care of you always. Forever. 💖
+        </p>
+
+        <button onclick="alert('I Love You Hafsaa ❤️')">Will You Stay With Me Forever? 💍</button>
+    </div>
+</div>
+
+</div>
+
+<script>
+function openLove(){
+    if(document.getElementById("pass").value === "hafsaa"){
+        document.getElementById("lock").style.display="none";
+        document.getElementById("content").classList.remove("hidden");
+    } else {
+        alert("Wrong Password 😢");
+    }
+}
+
+setInterval(function(){
+    var heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+15)+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),4000);
+},500);
+</script>
+
+</body>
+</html>
